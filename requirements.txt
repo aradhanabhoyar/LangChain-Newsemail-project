@@ -1,0 +1,10 @@
+langchain>=0.0.200
+openai
+feedparser
+beautifulsoup4
+requests
+lxml
+jinja2
+python-dotenv
+pandas
+pdfkit   # optional; needs wkhtmltopdf installed for PDF export

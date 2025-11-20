@@ -1,0 +1,78 @@
+[
+  {
+    "run_id": "e1ee4f33",
+    "timestamp": "2025-11-17T18:28:42.552024",
+    "sections": {
+      "Tech": 5,
+      "Security": 2,
+      "Gadgets": 1,
+      "General": 5
+    },
+    "subjects": [
+      "Top stories: Tech / Security",
+      "Today in Tech / Security \u2014 quick read"
+    ],
+    "total_articles": 13,
+    "total_sent": 13
+  },
+  {
+    "run_id": "cdddd5f9",
+    "timestamp": "2025-11-18T02:34:23.599402",
+    "sections": {
+      "Tech": 5,
+      "General": 5,
+      "Security": 1
+    },
+    "subjects": [
+      "Top stories: Tech / General",
+      "Today in Tech / General \u2014 quick read"
+    ],
+    "total_articles": 11,
+    "total_sent": 11
+  },
+  {
+    "run_id": "a5c61665",
+    "timestamp": "2025-11-18T02:44:32.662224",
+    "sections": {
+      "Tech": 5,
+      "General": 5,
+      "Security": 1
+    },
+    "subjects": [
+      "Top stories: Tech / General",
+      "Today in Tech / General \u2014 quick read"
+    ],
+    "total_articles": 11,
+    "total_sent": 11
+  },
+  {
+    "run_id": "7a6ddc9d",
+    "timestamp": "2025-11-18T02:49:30.695809",
+    "sections": {
+      "Tech": 5,
+      "General": 5,
+      "Security": 1
+    },
+    "subjects": [
+      "Top stories: Tech / General",
+      "Today in Tech / General \u2014 quick read"
+    ],
+    "total_articles": 11,
+    "total_sent": 11
+  },
+  {
+    "run_id": "64c5a377",
+    "timestamp": "2025-11-18T02:56:00.831389",
+    "sections": {
+      "Tech": 5,
+      "General": 5,
+      "Security": 1
+    },
+    "subjects": [
+      "Top stories: Tech / General",
+      "Today in Tech / General \u2014 quick read"
+    ],
+    "total_articles": 11,
+    "total_sent": 11
+  }
+]

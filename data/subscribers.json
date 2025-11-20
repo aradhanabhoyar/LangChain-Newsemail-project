@@ -1,0 +1,7 @@
+[
+  {"name":"Araya","email":"araya@example.com","topics":["Tech","Gadgets"],"tone":"formal","length":"short","template":"template_modern.html"},
+  {"name":"Bhavana","email":"bhavana@example.com","topics":["Health","Education"],"tone":"friendly","length":"medium","template":"template_classic.html"},
+  {"name":"Kiran","email":"kiran@example.com","topics":["Tech"],"tone":"formal","length":"long","template":"template_minimal.html"},
+  {"name":"Ravi","email":"ravi@example.com","topics":["Business","Tech"],"tone":"concise","length":"short","template":"template_modern.html"},
+  {"name":"Sonia","email":"sonia@example.com","topics":["Gadgets","Lifestyle"],"tone":"friendly","length":"medium","template":"template_classic.html"}
+]

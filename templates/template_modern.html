@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title }}</title>
+
+  <style>
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 24px;
+      color: #202124;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      color: #111;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .intro {
+      color: #444;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    h2.section {
+      color: #0b66ff;
+      border-bottom: 2px solid #e8f0ff;
+      padding-bottom: 6px;
+      margin-top: 28px;
+      font-size: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 18px;
+      margin: 14px 0;
+      border-radius: 10px;
+      border: 1px solid #eef4ff;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #7a7a7a;
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-size: 17px;
+      margin: 0 0 6px 0;
+      color: #0b2f6b;
+      font-weight: 600;
+    }
+
+    .summary {
+      color: #333;
+      margin: 0 0 12px 0;
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .cta {
+      display: inline-block;
+      background: linear-gradient(90deg, #0b66ff, #0049c7);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      opacity: .92;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: #6b6b6b;
+      margin-top: 28px;
+      border-top: 1px solid #eceff5;
+      padding-top: 14px;
+      line-height: 1.45;
+    }
+
+    .unsubscribe {
+      color: #7a7a7a;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div>
+        <h1>{{ title }}</h1>
+
+        <div class="intro">
+          {% if tone == 'friendly' %}
+            Hey {{ subscriber.name }}, here's your curated newsletter for today!
+          {% elif tone == 'formal' %}
+            Hello {{ subscriber.name }}, below is your professionally curated digest.
+          {% elif tone == 'enthusiastic' %}
+            Hi {{ subscriber.name }}! Check out the exciting updates we've picked for you!
+          {% else %}
+            {{ intro }}
+          {% endif %}
+        </div>
+      </div>
+
+      <div style="text-align:right; font-size:12px; color:#777;">
+        <a href="#" style="color:#777; text-decoration:none;">View online</a>
+      </div>
+    </div>
+
+    <!-- SECTIONS + ARTICLES -->
+    {% for section, articles in sections.items() %}
+      <h2 class="section">{{ section }}</h2>
+
+      {% for a in articles %}
+        <div class="card">
+          <div class="meta">Relevance Score: {{ a.score }}</div>
+          <div class="title">{{ a.title }}</div>
+          <div class="summary">{{ a.summary }}</div>
+          <a class="cta"
+             href="{{ a.link }}?utm_source=newsletter&utm_medium=email&utm_campaign={{ title | replace(' ', '_') }}&subscriber={{ subscriber.email }}&article={{ a.title | truncate(40, True) | replace(' ', '_') }}"
+             target="_blank">
+             Read Full Article →
+          </a>
+        </div>
+      {% endfor %}
+    {% endfor %}
+
+    <!-- FOOTER -->
+    <div class="footer">
+      Enjoyed this issue?
+      <a href="#" class="unsubscribe">Forward to a friend</a>.<br><br>
+
+      You're receiving this newsletter because you subscribed with
+      <b>{{ subscriber.email }}</b>.
+      <a href="#" class="unsubscribe">Unsubscribe</a><br><br>
+
+      © {{ year }} Example Company • 123 Example Street, City, Country
+    </div>
+
+  </div>
+</body>
+</html>

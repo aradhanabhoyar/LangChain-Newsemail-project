@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>{{ title }}</title>
+<style>
+  body {
+      font-family: system-ui, Segoe UI, Arial;
+      padding: 26px;
+      background: #f7f8fb;
+      color: #111;
+  }
+  .card {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+  h1 {
+      font-size: 22px;
+      margin-bottom: 10px;
+  }
+  .intro {
+      color: #444;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.5;
+  }
+  h3 {
+      margin-top: 22px;
+      color: #0b66ff;
+      border-bottom: 1px solid #e6edff;
+      padding-bottom: 4px;
+  }
+  .article {
+      margin: 14px 0;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed #e3e3e3;
+  }
+  .article-title {
+      font-weight: bold;
+      margin: 0 0 6px 0;
+      color: #0b2f6b;
+  }
+  .summary {
+      color: #444;
+      margin: 0 0 10px 0;
+  }
+
+  /* CTA BUTTON */
+  .read-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #0b66ff, #0049c7);
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: transform .2s ease, opacity .2s ease;
+  }
+  .read-btn:hover {
+      transform: translateY(-1px);
+      opacity: .92;
+  }
+
+  .footer {
+      font-size: 12px;
+      color: #9aa0a6;
+      margin-top: 26px;
+      border-top: 1px solid #eceff5;
+      padding-top: 10px;
+      line-height: 1.4;
+  }
+  .footer a {
+      color: #6b6b6b;
+      text-decoration: underline;
+  }
+</style>
+</head>
+
+<body>
+  <div class="card">
+
+    <!-- HEADER -->
+    <h1>{{ title }}</h1>
+
+    <p class="intro">
+      {% if tone == 'friendly' %}
+        Hey {{ subscriber.name }}, here's your curated newsletter for today!
+      {% elif tone == 'formal' %}
+        Hello {{ subscriber.name }}, below is your professionally curated digest.
+      {% elif tone == 'enthusiastic' %}
+        Hi {{ subscriber.name }}! Check out the exciting updates we've picked for you!
+      {% else %}
+        {{ intro }}
+      {% endif %}
+    </p>
+
+    <!-- SECTIONS -->
+    {% for section, articles in sections.items() %}
+      <h3>{{ section }}</h3>
+
+      {% for a in articles %}
+        <div class="article">
+
+          <div class="article-title">{{ a.title }}</div>
+          <p class="summary">{{ a.summary }}</p>
+
+          <!-- UPDATED CTA BUTTON -->
+          <a 
+            class="read-btn"
+            href="{{ a.link }}?utm_source=newsletter&utm_medium=email&utm_campaign={{ title | replace(' ', '_') }}&subscriber={{ subscriber.email }}&article={{ a.title | truncate(40, True) | replace(' ', '_') }}"
+            target="_blank"
+          >
+            Read Full Article →
+          </a>
+
+        </div>
+      {% endfor %}
+    {% endfor %}
+
+    <!-- FOOTER -->
+    <div class="footer">
+      You are receiving this newsletter as <b>{{ subscriber.email }}</b>.<br>
+      <a href="#">Manage Preferences</a> • <a href="#">Unsubscribe</a><br><br>
+      © {{ now.year }} Classic Newsletter Template
+    </div>
+
+  </div>
+</body>
+</html>
