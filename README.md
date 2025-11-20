@@ -50,6 +50,7 @@ Article: Don't blindly trust what AI tells you, says Google... | Category: Tech 
 Prepared 6 articles after filtering & summarizing.
 
 === GENERATING NEWSLETTERS ===
+
 Generating newsletter for Araya...
 Generated: ['./samples\\Araya_newsletter.html']
 Generating newsletter for Bhavana...
