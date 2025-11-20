@@ -1,6 +1,6 @@
 # LangChain Email Newsletter Writer
 
-Automated newsletter generator that curates articles (RSS + scraping), categorizes and scores content, summarizes using LangChain (with fallback), and builds professional HTML newsletters. Includes A/B subject generation, caching, analytics, and optional PDF export
+Automated newsletter generator that curates articles (RSS + scraping), categorizes and scores content, summarizes using LangChain (with fallback), and builds professional HTML newsletters. Includes Araya newsletter generation, caching, analytics, and optional PDF export
 
 ## Features
 
@@ -11,9 +11,9 @@ Automated newsletter generator that curates articles (RSS + scraping), categoriz
 - Template library (modern, minimal, corporate)
 - A/B subject line generation
 - Simple analytics logging
-- Optional HTML → PDF export (requires `wkhtmltopdf`)
+- HTML → PDF export 
 
-## Setup (Fresher-Friendly)
+## Setup 
 
 1. Clone the repo
 git clone https://github.com/yourusername/langchain-newsletter.git
